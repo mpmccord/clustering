@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import os
 """
 Gets the path of the file for data
 Input: filename, e.g. example.data
