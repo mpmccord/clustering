@@ -7,6 +7,11 @@ Input: filename, e.g. example.data
 Output: filepath stored in data folder
 e.g. C://...data/example.data
 """
+def scatter3D(arr, x, y, z):
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+    ax.scatter(arr[x], arr[y], arr[z], alpha=0.25)
+    plt.show()
 def getPath(filename):
     notebook_path = os.path.abspath("Clustering.ipynb")
     filepath = os.path.join(os.path.dirname(notebook_path), "data\\" + filename)
@@ -209,3 +214,6 @@ def cluster_analysis(filename, k, class_col=None):
     ax.set_ylabel(headers[y_col])
     plt.tight_layout()
     # Expectation Maximization Clustering
+if __name__ == '__main__':
+    arr = np.arange(99).reshape(3, 33)
+    scatter3D(arr, 0, 1, 2)   
